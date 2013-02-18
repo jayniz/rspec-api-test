@@ -4,7 +4,7 @@ describe RSpecAPITest::HTTPHelpers do
     it "set the base url for the tests" do
       defaults = {
           :base_url => 'http://localhost:9292',
-          :defaults => { :content_type => 'application/json' }
+          :defaults => { content_type: 'application/json' }
         }
       expect{
         RSpecAPITest.config = defaults
@@ -13,7 +13,7 @@ describe RSpecAPITest::HTTPHelpers do
 
     it "return a json hash" do
       VCR.use_cassette('json hash') do
-        res = post("/nodes/users", {:test => :user}.to_json)
+        res = post("/nodes/users", {test: :user}.to_json)
         res.code.should == 201
         res[:payload][:test].should == 'user'
       end
@@ -46,38 +46,38 @@ describe RSpecAPITest::HTTPHelpers do
     before(:all) do
       RSpecAPITest.config = {
           :base_url => 'http://myspace.com:81',
-          :defaults => { :content_type => 'application/soap+xml' }
+          :defaults => { content_type: 'application/soap+xml' }
         }
     end
 
-    let(:response){ mock(:response =>'{"success": "true"}', :code => 123) }
+    let(:response){ mock(response:'{"success": "true"}', code: 123) }
 
     it "call without body and without options" do
       RestClient.should_receive(:get).
-        with("http://myspace.com:81/foo", :content_type => 'application/soap+xml').
+        with("http://myspace.com:81/foo", content_type: 'application/soap+xml').
         and_return(response)
       get("/foo")
     end
 
     it "call with body but without options" do
       RestClient.should_receive(:post).
-        with("http://myspace.com:81/bar", "body", :content_type => 'application/soap+xml').
+        with("http://myspace.com:81/bar", "body", content_type: 'application/soap+xml').
         and_return(response)
       post("/bar", "body")
     end
 
     it "call without body but with options" do
       RestClient.should_receive(:get).
-        with("http://myspace.com:81/foo", :something => :extra, :content_type => 'application/json').
+        with("http://myspace.com:81/foo", something: :extra, content_type: 'application/json').
         and_return(response)
       get("/foo", something: :extra, content_type: 'application/json')
     end
 
     it "call with body and options" do
       RestClient.should_receive(:post).
-        with("http://myspace.com:81/bax", "body", :something => :extra, :content_type => 'application/json').
+        with("http://myspace.com:81/bax", "body", something: :extra, content_type: 'application/json').
         and_return(response)
-      post("/bax", "body", :something => :extra, :content_type => 'application/json')
+      post("/bax", "body", something: :extra, content_type: 'application/json')
     end
   end
 end
