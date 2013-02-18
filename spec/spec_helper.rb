@@ -4,7 +4,7 @@ require 'bundler'
 Bundler.require
 require 'vcr_setup'
 
-require File.expand_path("../../lib/rspec-api-test/http_helpers", __FILE__)
+require File.expand_path("../../lib/rspec_api_test/http_helpers", __FILE__)
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
