@@ -70,7 +70,7 @@ describe RSpecAPITest::HTTPHelpers do
       RestClient.should_receive(:get).
         with("http://myspace.com:81/foo", :something => :extra, :content_type => 'application/json').
         and_return(response)
-      get("/foo", something: :extra, content_type: 'application/json')
+      get("/foo", :something => :extra, :content_type => 'application/json')
     end
 
     it "call with body and options" do
