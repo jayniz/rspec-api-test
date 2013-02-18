@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:9292/nodes/999999999
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: ! 'Not Found '
+    headers:
+      X-Frame-Options:
+      - sameorigin
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '6088'
+      Cache-Control:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT
+      Access-Control-Allow-Headers:
+      - Content-Type
+      Access-Control-Max-Age:
+      - '86400'
+      Server:
+      - WEBrick/1.3.1 (Ruby/1.9.2/2012-02-22)
+      Date:
+      - Mon, 18 Feb 2013 16:16:19 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":false,"reason":"Could not find object with id=999999999","backtrace":"/Users/jannis/Dev/core/sheldon-moviepilot/lib/sheldon/app/node.rb:26:in
+        `find!''\n/Users/jannis/Dev/core/sheldon-moviepilot/lib/sinatra/app/nodes.rb:11:in
+        `HEAD /nodes/:id''\norg/jruby/RubyMethod.java:121:in `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:1264:in
+        `compile!''\norg/jruby/RubyProc.java:258:in `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:835:in
+        `route!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:851:in
+        `route_eval''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:835:in
+        `route!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:872:in
+        `process_route''\norg/jruby/RubyKernel.java:1197:in `catch''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:870:in
+        `process_route''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:834:in
+        `route!''\norg/jruby/RubyArray.java:1615:in `each''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:833:in
+        `route!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:936:in
+        `dispatch!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/sinatra.rb:48:in
+        `dispatch_with_newrelic''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:268:in
+        `perform_action_with_newrelic_trace''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/method_tracer.rb:240:in
+        `trace_execution_scoped''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/method_tracer.rb:239:in
+        `trace_execution_scoped''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:263:in
+        `perform_action_with_newrelic_trace''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:262:in
+        `perform_action_with_newrelic_trace''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/agent/instrumentation/sinatra.rb:45:in
+        `dispatch_with_newrelic''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:769:in
+        `call!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:921:in
+        `invoke''\norg/jruby/RubyKernel.java:1197:in `catch''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:921:in
+        `invoke''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:769:in
+        `call!''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:755:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/commonlogger.rb:20:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:136:in
+        `call''\n/Users/jannis/Dev/core/sheldon-moviepilot/lib/rack/jsonp.rb:13:in
+        `call''\n/Users/jannis/Dev/core/sheldon-moviepilot/lib/rack/header_control.rb:10:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-protection-1.2.0/lib/rack/protection/xss_header.rb:22:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-protection-1.2.0/lib/rack/protection/path_traversal.rb:16:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-protection-1.2.0/lib/rack/protection/json_csrf.rb:17:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-protection-1.2.0/lib/rack/protection/base.rb:47:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-protection-1.2.0/lib/rack/protection/xss_header.rb:22:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/logger.rb:15:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:129:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/head.rb:9:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:99:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:1389:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:1471:in
+        `synchronize''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:1389:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/newrelic_rpm-3.5.5.38/lib/new_relic/rack/developer_mode.rb:24:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/lint.rb:48:in
+        `_call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/lint.rb:36:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/showexceptions.rb:24:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/commonlogger.rb:20:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/sinatra-1.3.3/lib/sinatra/base.rb:136:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/chunked.rb:43:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/content_length.rb:14:in
+        `call''\n/Users/jannis/.rvm/gems/jruby-1.6.7@sheldon/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in
+        `service''\n/Users/jannis/.rvm/rubies/jruby-1.6.7/lib/ruby/1.9/webrick/httpserver.rb:111:in
+        `service''\n/Users/jannis/.rvm/rubies/jruby-1.6.7/lib/ruby/1.9/webrick/httpserver.rb:70:in
+        `run''\n/Users/jannis/.rvm/rubies/jruby-1.6.7/lib/ruby/1.9/webrick/httpserver.rb:48:in
+        `run''\n/Users/jannis/.rvm/rubies/jruby-1.6.7/lib/ruby/1.9/webrick/server.rb:183:in
+        `start_thread''\n/Users/jannis/.rvm/rubies/jruby-1.6.7/lib/ruby/1.9/webrick/server.rb:173:in
+        `start_thread''"}'
+    http_version: 
+  recorded_at: Mon, 18 Feb 2013 16:16:19 GMT
+recorded_with: VCR 2.4.0
