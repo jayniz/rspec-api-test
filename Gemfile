@@ -6,5 +6,6 @@ gem 'rest-client'
 
 group :development do
   gem 'jeweler'
+  gem 'webmock'
   gem 'vcr'
 end

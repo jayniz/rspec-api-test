@@ -27,9 +27,11 @@ module MakeSure
       Array => JSONArrayResponse
     }
 
+    attr_accessor :base_url
+
     [:get, :put, :post, :delete, :head].each do |verb|
       self.send(:define_method, verb) do |url, params = nil|
-        uri = "#{S.host}#{url}"
+        uri = "#{base_url}#{url}"
         response = request(verb, uri, params)
         begin 
           json = JSON.parse(response)

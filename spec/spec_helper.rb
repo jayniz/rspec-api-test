@@ -1,7 +1,10 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'rspec'
-require 'tmp-dings'
+require 'bundler'
+Bundler.require
+require 'vcr_setup'
+
+require File.expand_path("../../lib/make_sure/http_helpers", __FILE__)
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -11,7 +14,7 @@ RSpec.configure do |config|
   
   # We're doing what the gem is doing to a user's rspec here
   # and then we test that the helpers are there in rspec. Tehehe
-  c.include(MakeSure::HTTPHelpers)
+  config.include(MakeSure::HTTPHelpers)
 end
 
 

@@ -1,5 +1,11 @@
 describe MakeSure::HTTPHelpers do
 
+  it "sets the base url for the tests" do
+    expect{
+      self.base_url = 'http://www.reddit.com'
+    }.to change(self, :base_url).to('http://www.reddit.com')
+  end
+
   it "returning a 404" do
   end
 
@@ -8,7 +14,7 @@ describe MakeSure::HTTPHelpers do
   end
 
   it "returning a json array" do
-    url = "http://www.reddit.com/api/info.json"
+    url = "/api/info.json"
 
     VCR.use_cassette('json array') do
       res = get(url, count: 1, url: '18p78h')
