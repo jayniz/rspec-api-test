@@ -40,6 +40,13 @@ describe RSpecAPITest::HTTPHelpers do
         res.code.should == 404
       end
     end
+
+    it "access the headers" do
+      VCR.use_cassette('404') do
+        res = get("/nodes/999999999")
+        res.headers[:cache_control].should == "no-cache"
+      end
+    end
   end
 
   describe "RestClient" do
