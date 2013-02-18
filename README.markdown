@@ -12,15 +12,15 @@ on the eyes.
 
 Here's what it does:
 
-    1. HTTP verbs as helper methods in your specs
-    2. Applies default options to all your requests (headers, etc.)
-    3. Assumes the response is JSON and parses it
-    4. Gives you the JSON response object (Array or Hash) with a
-       little extra: the `code` method (so you don't have to 
-       catch an exception to test for a 404).
+1. HTTP verbs as helper methods in your specs
+2. Applies default options to all your requests (headers, etc.)
+3. Assumes the response is JSON and parses it
+4. Gives you the JSON response object (Array or Hash) with a
+   little extra: the `code` method (so you don't have to 
+   catch an exception to test for a 404).
 
-Usage:
-------
+Usage
+-----
 
 This gem adds helper methods for all HTTP verbs to your RSpec
 tests, so you can just say something like:
@@ -59,8 +59,8 @@ describe "CRUD" do
 end
 ```
 
-Defaults and configuration:
----------------------------
+Defaults and configuration
+--------------------------
 
 Yes, you are right, there was no protocol or hostname in any
 of the examples. Here's how you can configure things, for example
@@ -78,16 +78,16 @@ RSpecAPITest.config = {
 
 The `defaults` hash is passed on to RestClient and is used as
 documented [here](https://github.com/archiloque/rest-client).
-The parameters of our `get`,`put`,`post`,`delete` helpers are 
-the same as `RestClient.get`, `RestClient.put`, `RestClient.post`,
-and `RestClient.delete`.
+The parameters of our `get, put, post, delete` helpers are 
+the same as `RestClient.get, RestClient.put, RestClient.post,
+RestClient.delete`.
 
 If the response couldn't be parsed as JSON, you'll just get
 back the RestClient object so you can do whatever you want with
 it.
 
-Installation:
--------------
+Installation
+------------
 Just add
 
     gem 'rspec_api_test'
@@ -99,6 +99,6 @@ to your `Gemfile` and in `spec_helper.rb` do a
 after you required rspec or did a `Bundler.require`.
 
 
-Test:
------
+Test
+----
 Git clone this repo and run `rake`.
