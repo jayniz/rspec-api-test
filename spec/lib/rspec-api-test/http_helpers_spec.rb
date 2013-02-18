@@ -1,4 +1,4 @@
-describe MakeSure::HTTPHelpers do
+describe RSpecAPITest::HTTPHelpers do
 
   describe "HTTP requests" do
     it "set the base url for the tests" do
@@ -7,8 +7,8 @@ describe MakeSure::HTTPHelpers do
           defaults: { content_type: 'application/json' }
         }
       expect{
-        MakeSure.config = defaults
-      }.to change(MakeSure, :config).to(defaults)
+        RSpecAPITest.config = defaults
+      }.to change(RSpecAPITest, :config).to(defaults)
     end
 
     it "return a json hash" do
@@ -44,7 +44,7 @@ describe MakeSure::HTTPHelpers do
 
   describe "RestClient" do
     before(:all) do
-      MakeSure.config = {
+      RSpecAPITest.config = {
           base_url: 'http://myspace.com:81',
           defaults: { content_type: 'application/soap+xml' }
         }

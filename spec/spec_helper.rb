@@ -4,7 +4,7 @@ require 'bundler'
 Bundler.require
 require 'vcr_setup'
 
-require File.expand_path("../../lib/make_sure/http_helpers", __FILE__)
+require File.expand_path("../../lib/rspec-api-test/http_helpers", __FILE__)
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -14,10 +14,10 @@ RSpec.configure do |config|
   
   # We're doing what the gem is doing to a user's rspec here
   # and then we test that the helpers are there in rspec. Tehehe
-  config.include(MakeSure::HTTPHelpers)
+  config.include(RSpecAPITest::HTTPHelpers)
   
   config.before(:suite) do
-    MakeSure.config = nil
+    RSpecAPITest.config = nil
   end
 end
 

@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "make-sure"
-  gem.homepage = "http://github.com/jayniz/make-sure"
+  gem.name = "rspec-api-test"
+  gem.homepage = "http://github.com/jayniz/rspec-api-test"
   gem.license = "MIT"
   gem.summary = %Q{Makes JSON-API integration testing easier with rspec}
   gem.description = %Q{Test a JSON-API using rspec and simple get/put/post/delete helpers}

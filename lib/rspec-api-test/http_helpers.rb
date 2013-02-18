@@ -1,7 +1,7 @@
 require 'json'
 require 'active_support/core_ext/hash'
 
-class MakeSure
+class RSpecAPITest
   def self.config=(config)
     @config = config
   end
@@ -28,7 +28,7 @@ class MakeSure
     end
 
     def request(*args)
-      defaults = MakeSure.config[:defaults] || {}
+      defaults = RSpecAPITest.config[:defaults] || {}
       opts_i = args[2].is_a?(String) ? 3 : 2
       args[opts_i] ||= {} if defaults
       args[opts_i].reverse_merge!(defaults) 
@@ -44,7 +44,7 @@ class MakeSure
 
     [:get, :put, :post, :delete, :head].each do |verb|
       self.send(:define_method, verb) do |*args|
-        out = [verb, "#{MakeSure.config[:base_url]}#{args[0]}"] +  args[1..-1]
+        out = [verb, "#{RSpecAPITest.config[:base_url]}#{args[0]}"] +  args[1..-1]
         response = request(*out)
         begin 
           json = JSON.parse(response)
