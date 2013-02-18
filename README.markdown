@@ -1,4 +1,5 @@
-[![Build Status](https://secure.travis-ci.org/jayniz/rspec_api_test.png?branch=master)](https://travis-ci.org/jayniz/rspec_api_test)
+[![Build
+Status](https://travis-ci.org/jayniz/rspec-api-test.png?branch=master)](https://travis-ci.org/jayniz/rspec-api-test)
 
 Easy JSON API testing with RSpec
 ================================
