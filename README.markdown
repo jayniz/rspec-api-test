@@ -46,6 +46,10 @@ describe "CRUD" do
   it "creates a new user" do
     response.code.should == 201
   end
+  
+  it "returned some location header" do
+    response.headers[:location].should_not be_blank
+  end
 
   it "returned the correct id" do
     u = get("/users/#{response[:id]}")
