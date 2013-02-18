@@ -1,4 +1,15 @@
-module MakeSure
+require 'json'
+require 'active_support/core_ext/hash'
+
+class MakeSure
+  def self.config=(config)
+    @config = config
+  end
+
+  def self.config
+    @config ||= {}
+  end
+
   module HTTPHelpers
     class JSONHashResponse < DelegateClass(Hash)
       attr_reader :code
@@ -16,9 +27,13 @@ module MakeSure
       end
     end
 
-    def request(verb, uri, params)
-      RestClient.send(verb, uri, params: params)
-    rescue => e
+    def request(*args)
+      defaults = MakeSure.config[:defaults] || {}
+      opts_i = args[2].is_a?(String) ? 3 : 2
+      args[opts_i] ||= {} if defaults
+      args[opts_i].reverse_merge!(defaults) 
+      RestClient.send(*args)
+    rescue RestClient::Exception => e
       e.response
     end
 
@@ -27,12 +42,10 @@ module MakeSure
       Array => JSONArrayResponse
     }
 
-    attr_accessor :base_url
-
     [:get, :put, :post, :delete, :head].each do |verb|
-      self.send(:define_method, verb) do |url, params = nil|
-        uri = "#{base_url}#{url}"
-        response = request(verb, uri, params)
+      self.send(:define_method, verb) do |*args|
+        out = [verb, "#{MakeSure.config[:base_url]}#{args[0]}"] +  args[1..-1]
+        response = request(*out)
         begin 
           json = JSON.parse(response)
           classes[json.class].new(json, response.code)

@@ -15,6 +15,10 @@ RSpec.configure do |config|
   # We're doing what the gem is doing to a user's rspec here
   # and then we test that the helpers are there in rspec. Tehehe
   config.include(MakeSure::HTTPHelpers)
+  
+  config.before(:suite) do
+    MakeSure.config = nil
+  end
 end
 
 
