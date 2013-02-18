@@ -3,8 +3,8 @@ describe RSpecAPITest::HTTPHelpers do
   describe "HTTP requests" do
     it "set the base url for the tests" do
       defaults = {
-          base_url: 'http://localhost:9292',
-          defaults: { content_type: 'application/json' }
+          :base_url => 'http://localhost:9292',
+          :defaults => { content_type: 'application/json' }
         }
       expect{
         RSpecAPITest.config = defaults
@@ -45,8 +45,8 @@ describe RSpecAPITest::HTTPHelpers do
   describe "RestClient" do
     before(:all) do
       RSpecAPITest.config = {
-          base_url: 'http://myspace.com:81',
-          defaults: { content_type: 'application/soap+xml' }
+          :base_url => 'http://myspace.com:81',
+          :defaults => { content_type: 'application/soap+xml' }
         }
     end
 
