@@ -24,35 +24,39 @@ Usage:
 This gem adds helper methods for all HTTP verbs to your RSpec
 tests, so you can just say something like:
 
-    it "returns the correct user" do
-      get("/users/123")[:name].should == "Jens Mander"
-    end
+```ruby
+it "returns the correct user" do
+  get("/users/123")[:name].should == "Jens Mander"
+end
 
-    it "returns a 404" do 
-      get("/users/0").code.should == 404
-    end
+it "returns a 404" do 
+  get("/users/0").code.should == 404
+end
+```
 
 So far so good, but your current monitoring tool can also do that.
 Here's an example where we create something, read an id, check
 for the correct value and delete our test data:
 
-    describe "CRUD" do
-      let(:response){ post("/users", test_data.to_json) }
+```ruby
+describe "CRUD" do
+  let(:response){ post("/users", test_data.to_json) }
 
-      it "creates a new user" do
-        response.code.should == 201
-      end
+  it "creates a new user" do
+    response.code.should == 201
+  end
 
-      it "returned the correct id" do
-        u = get("/users/#{response[:id]}")
-        u[:name].should == test_data[:name]
-      end
+  it "returned the correct id" do
+    u = get("/users/#{response[:id]}")
+    u[:name].should == test_data[:name]
+  end
 
-      it "deletes the user correctl" do
-        delete("/users/#{response[:id]}")
-        get("/users/#{response[:id]}").code.should == 404
-      end
-    end
+  it "deletes the user correctl" do
+    delete("/users/#{response[:id]}")
+    get("/users/#{response[:id]}").code.should == 404
+  end
+end
+```
 
 Defaults and configuration:
 ---------------------------
@@ -61,13 +65,15 @@ Yes, you are right, there was no protocol or hostname in any
 of the examples. Here's how you can configure things, for example
 in `spec_helper.rb`:
 
-    RSpecAPITest.config = {
-      base_url: 'http://my-live-instance.com',
-      defaults: {
-        content_type: :json,
-        accept: :json
-      }
-    }
+```ruby
+RSpecAPITest.config = {
+  base_url: 'http://my-live-instance.com',
+  defaults: {
+    content_type: :json,
+    accept: :json
+  }
+}
+```
 
 The `defaults` hash is passed on to RestClient and is used as
 documented [here](https://github.com/archiloque/rest-client).
