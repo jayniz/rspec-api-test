@@ -14,27 +14,28 @@ Gem::Specification.new do |s|
   s.email = "jannis@moviepilot.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.markdown"
   ]
   s.files = [
     ".document",
     ".rspec",
     ".rvmrc",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
     "Guardfile",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.markdown",
     "Rakefile",
     "VERSION",
-    "lib/rspec-api-test.rb",
-    "lib/rspec-api-test/http_helpers.rb",
-    "rspec-api-test.gemspec",
+    "lib/rspec_api_test.rb",
+    "lib/rspec_api_test/http_helpers.rb",
+    "rspec_api_test.gemspec",
     "spec/fixtures/400.yml",
     "spec/fixtures/404.yml",
     "spec/fixtures/json_array.yml",
     "spec/fixtures/json_hash.yml",
-    "spec/lib/rspec-api-test/http_helpers_spec.rb",
+    "spec/lib/rspec_api_test/http_helpers_spec.rb",
     "spec/spec_helper.rb",
     "spec/vcr_setup.rb"
   ]
