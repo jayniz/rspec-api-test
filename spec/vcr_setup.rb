@@ -9,7 +9,7 @@ VCR.configure do |c|
   c.ignore_localhost          = false
   c.default_cassette_options  = {
     record: :new_episodes,
-    match_requests_on: [:method, :body, :uri]
+    match_requests_on: [:method, :body, :uri, :headers]
   }
   c.allow_http_connections_when_no_cassette = false
   c.debug_logger = File.open(File.expand_path("../../log/vcr.log", __FILE__), "w")

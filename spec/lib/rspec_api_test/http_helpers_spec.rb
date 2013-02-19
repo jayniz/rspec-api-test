@@ -49,7 +49,7 @@ describe RSpecAPITest::HTTPHelpers do
     end
   end
 
-  describe "RestClient" do
+  describe "Calling RestClient" do
     before(:all) do
       RSpecAPITest.config = {
           base_url: 'http://myspace.com:81',
@@ -59,28 +59,28 @@ describe RSpecAPITest::HTTPHelpers do
 
     let(:response){ mock(response:'{"success": "true"}', code: 123) }
 
-    it "call without body and without options" do
+    it "without body and without options" do
       RestClient.should_receive(:get).
         with("http://myspace.com:81/foo", content_type: 'application/soap+xml').
         and_return(response)
       get("/foo")
     end
 
-    it "call with body but without options" do
+    it "with body but without options" do
       RestClient.should_receive(:post).
         with("http://myspace.com:81/bar", "body", content_type: 'application/soap+xml').
         and_return(response)
       post("/bar", "body")
     end
 
-    it "call without body but with options" do
+    it "without body but with options" do
       RestClient.should_receive(:get).
         with("http://myspace.com:81/foo", something: :extra, content_type: 'application/json').
         and_return(response)
       get("/foo", something: :extra, content_type: 'application/json')
     end
 
-    it "call with body and options" do
+    it "with body and options" do
       RestClient.should_receive(:post).
         with("http://myspace.com:81/bax", "body", something: :extra, content_type: 'application/json').
         and_return(response)

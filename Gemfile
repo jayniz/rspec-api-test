@@ -14,4 +14,5 @@ group :development do
   gem 'guard-bundler'
   gem 'terminal-notifier'
   gem 'rb-fsevent'
+  gem 'debugger'
 end
