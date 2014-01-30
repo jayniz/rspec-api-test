@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2014-01-09"
+  s.date = "2014-01-30"
   s.description = "Test a JSON-API using rspec and simple get/put/post/delete helpers"
   s.email = "jannis@moviepilot.com"
   s.extra_rdoc_files = [
